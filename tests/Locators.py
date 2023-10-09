@@ -9,6 +9,8 @@ class Locators:
 
     PRIVATE_ACCOUNT_TEXT = (By.XPATH, '//p[text()="Личный Кабинет"]')
 
+    PLACE_ORDER = (By.XPATH, '//button[text()="Оформить заказ"]')
+
 
     USERNAME_FIELD = (By.NAME, "name")
     PASSWORD_FIELD = (By.NAME, "Пароль")
@@ -34,10 +36,9 @@ class Locators:
 
     CONSTRUCTOR_BUTTON = (By.XPATH, '//p[text()="Конструктор"]')
 
-    BUNS_TAB = (By.XPATH, "//div[contains(@class, 'tab_tab') and .//span[text() = 'Булки']]")
-    SAUCES_TAB = (By.XPATH, "//div[contains(@class, 'tab_tab') and .//span[text() = 'Соусы']]")
-    FILLINGS_TAB = (By.XPATH, "//div[contains(@class, 'tab_tab') and .//span[text() = 'Начинки']]")
+    BUNS_TAB = (By.XPATH, "//span[text()='Булки']")
+    SAUCES_TAB = (By.XPATH, "//span[text()='Соусы']")
+    FILLINGS_TAB = (By.XPATH, "//span[text()='Начинки']")
 
-    BURGER_INGREDIENTS_SECTION_BUNS = (By.CSS_SELECTOR, '.BurgerIngredients_ingredients__1N8v2 > div:nth-child(2)')
-    BURGER_INGREDIENTS_SECTION_SAUCES = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[1]/div[3]')
-    BURGER_INGREDIENTS_SECTION_FILLINGS = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[1]/div[3]')
+    BURGER_INGREDIENTS_SECTION_ACTIVE = (By.XPATH, "//div[contains(@class,'tab_tab_type_current')]")
+

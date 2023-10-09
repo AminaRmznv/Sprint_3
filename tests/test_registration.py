@@ -11,11 +11,13 @@ class TestRegistration:
         WebDriverWait(driver, 3).until(
             EC.visibility_of_element_located(Locators.REGISTRATION_NAME_FIELD))
         driver.find_element(*Locators.REGISTRATION_NAME_FIELD).send_keys("Amina Ramazanova")
-        driver.find_element(*Locators.REGISTRATION_EMAIL_FIELD).send_keys("aminaramazanova1856@yandex.by")
+        driver.find_element(*Locators.REGISTRATION_EMAIL_FIELD).send_keys("aminaramazanova1861@yandex.by")
         driver.find_element(*Locators.REGISTRATION_PASSWORD_FIELD).send_keys("pass123")
         driver.find_element(*Locators.REGISTER_BUTTON).click()
+        WebDriverWait(driver, 5).until(
+            EC.visibility_of_element_located(Locators.SUBMIT_LOGIN_BUTTON))
 
-        assert driver.current_url == "https://stellarburgers.nomoreparties.site/register"
+        assert driver.find_element(*Locators.SUBMIT_LOGIN_BUTTON).is_displayed()
 
     def test_incorrect_password_error(self, driver):
         driver.find_element(*Locators.PRIVATE_ACCOUNT_TEXT).click()
